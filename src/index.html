@@ -2,11 +2,675 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CBSG Electromechanical Works | HVAC, MEP &amp; Building Services, Dubai</title>
+    <meta name="description" content="Dubai-based since 2018: HVAC, MEP, civil works, interior finishing, renovation, cleaning and building maintenance. Request a quotation from CBSG.">
+    <link rel="canonical" href="https://www.cbsgroup.ae/">
+    <meta name="theme-color" content="#14213D">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CBSG Electromechanical Works LLC">
+    <meta property="og:title" content="CBSG Electromechanical Works LLC | Complete building solutions in Dubai">
+    <meta property="og:description" content="HVAC, MEP, civil works, interior finishing and building maintenance services in Dubai, UAE. Established 2018.">
+    <meta property="og:url" content="https://www.cbsgroup.ae/">
+    <meta property="og:image" content="https://www.cbsgroup.ae/assets/logo-512.png">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="preload" href="assets/fonts/Oswald-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/png" href="assets/logo-192.png">
+    <link rel="apple-touch-icon" href="assets/logo-192.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "CBSG Electromechanical Works LLC",
+        "url": "https://www.cbsgroup.ae",
+        "logo": "https://www.cbsgroup.ae/assets/logo-512.png",
+        "telephone": "+971551906869",
+        "email": "info@cbsgroup.ae",
+        "foundingDate": "2018",
+        "description": "Electromechanical, HVAC, MEP, civil, interior finishing, renovation, cleaning and building maintenance services in Dubai, UAE.",
+        "address": {
+            "@type": "PostalAddress",
+            "postOfficeBoxNumber": "624585",
+            "addressLocality": "Dubai",
+            "addressCountry": "AE"
+        }
+    }
+    </script>
+
+    <style>
+        /* ==========================================================
+           DESIGN TOKENS
+           Breakpoints: 480 (small phone) · 640 · 768 (tablet) ·
+                        1024 (laptop) · 1280 (desktop) · 1536 (large)
+           Spacing scale: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96
+           ========================================================== */
+        /* Oswald variable font (SIL Open Font License), self-hosted, Latin subset */
+        @font-face {
+            font-family: "Oswald";
+            src: url("assets/fonts/Oswald-Variable.woff2") format("woff2");
+            font-weight: 200 700; font-style: normal; font-display: swap;
+        }
+
+        :root {
+            --orange: #F25A22;          /* brand orange: icons, accents, decoration */
+            --orange-strong: #C43608;   /* AA-contrast orange: buttons, small orange text */
+            --orange-dark: #A52D06;     /* hover */
+            --orange-light: #FF8F63;    /* orange text on dark backgrounds */
+            --navy: #14213D;
+            --ink: #1B1F2A;
+            --muted: #4A5262;
+            --purple: #561F52;
+            --warm-white: #FFFBF8;
+            --surface: #F5F7FA;
+            --peach: #FDF0E9;
+            --line: #E4E8EE;
+            --white: #FFFFFF;
+
+            --font-display: "Oswald", "Arial Narrow", Impact, sans-serif;
+            --title-weight: 400;          /* one weight for every title */
+            --title-tracking: -0.01em;  /* one letter-spacing for every title */
+            --font-head: "Manrope", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+            --font-body: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+            --fs-hero: clamp(2.5rem, 1.5rem + 4vw, 4.25rem);
+            --fs-h2: clamp(2rem, 1.5rem + 2.2vw, 3.25rem);
+            --fs-h3: 1.25rem;
+            --fs-body: 1rem;
+            --fs-lead: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --fs-small: 0.875rem;
+
+            --radius: 8px;
+            --shadow: 0 1px 2px rgba(20, 33, 61, .06), 0 8px 24px rgba(20, 33, 61, .06);
+            --header-h: 72px;
+            --container: 1440px;
+            --gutter: clamp(16px, 4vw, 32px);
+            --section-y: clamp(56px, 8vw, 104px);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            font-size: var(--fs-body);
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; }
+        h1, h2, h3, p { margin: 0; }
+        h1, h2, h3 { font-family: var(--font-display); font-weight: var(--title-weight); letter-spacing: var(--title-tracking); line-height: 1.12; color: var(--navy); }
+
+        :focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; border-radius: 4px; }
+        .btn:focus-visible, .nav-toggle:focus-visible { border-radius: 0; }
+        .on-dark :focus-visible, .site-footer :focus-visible { outline-color: #fff; }
+
+        .skip-link {
+            position: absolute; left: 16px; top: -64px; z-index: 200;
+            background: var(--navy); color: #fff; padding: 12px 16px; border-radius: var(--radius);
+        }
+        .skip-link:focus { top: 12px; }
+
+        .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+        .section { padding-block: var(--section-y); }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+            color: var(--orange-strong);
+            margin-bottom: 12px;
+        }
+        .section-title { font-size: var(--fs-h2); }
+        .lead { font-size: var(--fs-lead); color: var(--muted); }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            min-height: 48px; padding: 12px 24px;
+            font: 500 1rem/1.2 var(--font-display); letter-spacing: .06em; text-transform: uppercase;
+            border-radius: 0; border: 2px solid transparent;
+            text-decoration: none; cursor: pointer;
+            transition: background-color .2s, color .2s, border-color .2s, transform .2s;
+        }
+        .btn svg { width: 18px; height: 18px; flex: none; }
+        .btn-primary { background: var(--orange-strong); color: #fff; }
+        .btn-primary:hover { background: var(--orange-dark); }
+        .btn-outline { background: transparent; color: var(--navy); border-color: var(--orange-strong); }
+        .btn-outline:hover { background: var(--orange-strong); color: #fff; }
+        .btn-sm { min-height: 44px; padding: 10px 18px; font-size: 0.9375rem; }
+
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255, 255, 255, .97);
+            border-bottom: 1px solid var(--line);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: var(--header-h); }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+        .brand img { width: 48px; height: 48px; flex: none; }
+        .brand-name { font: 700 0.9375rem/1.2 var(--font-head); color: var(--navy); }
+        .nav { display: flex; align-items: center; gap: 32px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { font-size: 0.875rem; font-weight: 500; text-decoration: none; padding: 8px 2px; border-bottom: 2px solid transparent; }
+        .nav-links a:hover { border-color: var(--orange-strong); }
+        .nav-toggle {
+            display: none; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 0;
+            background: #fff; color: var(--navy); cursor: pointer; align-items: center; justify-content: center;
+        }
+        .nav-toggle .icon-close { display: none; }
+        .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+        .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+        @media (max-width: 899px) {
+            .nav-toggle { display: inline-flex; }
+            .nav {
+                display: none; position: absolute; left: 0; right: 0; top: 100%;
+                flex-direction: column; align-items: stretch; gap: 16px;
+                padding: 16px var(--gutter) 24px;
+                background: #fff; border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+            }
+            .nav.is-open { display: flex; }
+            .nav-links { flex-direction: column; gap: 0; }
+            .nav-links a { display: block; padding: 14px 0; font-size: 1rem; border-bottom: 1px solid var(--line); }
+            .nav .btn { width: 100%; }
+        }
+        @media (max-width: 479px) {
+            .brand-name { font-size: 0.8125rem; }
+            .brand img { width: 42px; height: 42px; }
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative; isolation: isolate; overflow: hidden;
+            background: var(--navy); color: #fff;
+            min-height: calc(100vh - var(--header-h));
+            min-height: calc(100svh - var(--header-h));
+            display: flex; align-items: center;
+        }
+        .hero-media { position: absolute; inset: 0; z-index: -1; }
+        .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 68% 50%; }
+        .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20, 33, 61, .66), rgba(20, 33, 61, .86)); }
+        .hero-body { width: 100%; padding-block: clamp(48px, 9vh, 112px); }
+        .hero .eyebrow { color: var(--orange-light); margin-bottom: 20px; }
+        .hero .lead { color: #E3E7EE; }
+        .hero h1 { color: #fff; font-size: var(--fs-hero); line-height: 1.05; margin-bottom: clamp(20px, 3.5vh, 32px); }
+        .hero h1 span { display: block; color: var(--orange-light); }
+        .hero-text { max-width: 920px; margin-inline: auto; text-align: center; }
+        .hero .lead { max-width: 40em; margin-inline: auto; }
+        .hero p + p { margin-top: 16px; }
+        .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: clamp(28px, 5vh, 44px); }
+        .hero-actions .btn { flex: 1 1 220px; }
+        .hero-note { margin-top: clamp(24px, 4vh, 36px); font-size: var(--fs-small); font-weight: 500; color: #fff; }
+        .hero .btn-outline { color: #fff; border-color: #fff; }
+        .hero .btn-outline:hover { background: #fff; color: var(--navy); }
+
+        @media (min-width: 900px) {
+            .hero-media::after { background: linear-gradient(to bottom, rgba(20, 33, 61, .7), rgba(20, 33, 61, .85)); }
+            .hero-body { padding-block: 88px; }
+            .hero-actions .btn { flex: 0 0 auto; }
+        }
+
+        /* ---------- About ---------- */
+        .about-grid { display: grid; gap: 40px; align-items: center; }
+        .about-text p + p { margin-top: 16px; }
+        .about-text .section-title { margin-bottom: 20px; }
+        .about-media { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .about-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+        .about-badge {
+            position: absolute; right: 0; bottom: 0;
+            background: var(--orange-strong); color: #fff;
+            padding: 20px 24px; max-width: 70%;
+            font: var(--title-weight) clamp(1.25rem, 1.1rem + 0.9vw, 1.75rem)/1.15 var(--font-display); letter-spacing: var(--title-tracking);
+        }
+        .about-badge span { display: block; }
+        .about-badge::after { content: ""; display: block; width: 28px; height: 2px; background: #fff; margin-top: 12px; }
+        @media (min-width: 900px) {
+            .about-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+        }
+
+        /* ---------- Services ---------- */
+        .services { background: var(--surface); }
+        .services-head { max-width: 880px; margin-bottom: 40px; }
+        .services-head .section-title { margin-bottom: 12px; }
+        .service-grid { display: grid; gap: 20px; grid-template-columns: 1fr; list-style: none; margin: 0; padding: 0; }
+        .service-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+        .service-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--line); }
+        .service-body { display: grid; grid-template-columns: 28px 1fr; column-gap: 14px; padding: 18px 18px 22px; }
+        .service-body .icon { color: var(--orange); margin-top: 1px; }
+        .service-card h3 { font-size: var(--fs-h3); margin-bottom: 4px; }
+        .service-card p { font-size: var(--fs-small); color: var(--muted); line-height: 1.55; }
+        @media (min-width: 640px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .service-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* ---------- Why CBSG ---------- */
+        .why { background: var(--peach); }
+        .why .section-title { max-width: 780px; margin-bottom: 48px; }
+        .why-grid { display: grid; gap: 32px; list-style: none; margin: 0; padding: 0; grid-template-columns: 1fr; }
+        .why-item .badge {
+            display: flex; align-items: center; justify-content: center;
+            width: 64px; height: 64px; border-radius: 50%; background: #FBD9C8; color: var(--orange-strong); margin-bottom: 20px;
+        }
+        .why-item .badge .icon { width: 30px; height: 30px; }
+        .why-item h3 { font-size: var(--fs-h3); margin-bottom: 8px; }
+        .why-item p { font-size: var(--fs-small); color: var(--muted); }
+        @media (min-width: 640px) { .why-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; } }
+        @media (min-width: 1024px) {
+            .why-grid { grid-template-columns: repeat(4, 1fr); gap: 0; }
+            .why-item { padding-inline: 28px; border-left: 1px solid rgba(20, 33, 61, .12); }
+            .why-item:first-child { padding-left: 0; border-left: 0; }
+        }
+
+        /* ---------- Vision & mission ---------- */
+        .vm { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); color: #fff; padding-block: clamp(56px, 7vw, 96px); border-top: 4px solid var(--orange); }
+        .vm-bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+        .vm::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to right, rgba(20, 33, 61, .94) 0%, rgba(20, 33, 61, .72) 45%, rgba(20, 33, 61, .08) 100%); }
+        @media (max-width: 899px) { .vm::before { background: rgba(20, 33, 61, .72); } }
+        .vm .eyebrow { color: #fff; opacity: .9; }
+        .vm-grid { display: grid; gap: 40px; margin-top: 8px; }
+        .vm-item { display: grid; grid-template-columns: 48px 1fr; gap: 20px; }
+        .vm-item .icon { width: 44px; height: 44px; color: var(--orange); }
+        .vm-item h3 { color: #fff; font-size: 1.75rem; margin-bottom: 8px; }
+        .vm-item p { color: #D5DAE3; font-size: 0.9375rem; }
+        @media (min-width: 900px) {
+            .vm-grid { grid-template-columns: 1.3fr 1fr; gap: 64px; }
+            .vm-item + .vm-item { padding-left: 64px; border-left: 1px solid rgba(255, 255, 255, .2); }
+        }
+
+        /* ---------- Contact ---------- */
+        .contact-grid { display: grid; gap: 40px; align-items: center; }
+        .contact-text .section-title { margin-bottom: 16px; }
+        .contact-text .btn { margin-top: 28px; }
+        .contact-fallback { margin-top: 16px; font-size: var(--fs-small); color: var(--muted); }
+        .contact-fallback a { color: var(--orange-strong); font-weight: 600; }
+        .contact-card { background: var(--peach); border-radius: 12px; padding: clamp(24px, 4vw, 36px); }
+        .contact-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+        .contact-card li { display: grid; grid-template-columns: 28px 1fr; gap: 16px; align-items: start; }
+        .contact-card .icon { color: var(--orange-strong); }
+        .contact-card a { display: inline-block; padding: 4px 0; text-decoration: none; font-weight: 500; overflow-wrap: anywhere; }
+        .contact-card a:hover { color: var(--orange-strong); text-decoration: underline; }
+        .contact-name { font-weight: 700; color: var(--navy); }
+        .contact-role { display: block; font-size: var(--fs-small); color: var(--muted); }
+        @media (min-width: 900px) { .contact-grid { grid-template-columns: 1.15fr 1fr; gap: 80px; } }
+
+        /* ---------- Footer ---------- */
+        .site-footer { background: var(--navy); color: #fff; padding-block: 40px; }
+        .footer-grid { display: grid; gap: 32px; align-items: center; }
+        .footer-brand { display: flex; align-items: center; gap: 16px; }
+        .footer-brand img { width: 64px; height: 64px; flex: none; }
+        .footer-brand strong { display: block; font: 700 1rem/1.3 var(--font-head); }
+        .footer-brand span { display: block; font-size: 0.8125rem; color: #C3CAD6; margin-top: 4px; }
+        .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; list-style: none; margin: 0; padding: 0; }
+        .footer-nav a { font-size: 0.875rem; text-decoration: none; display: inline-block; padding: 8px 0; }
+        .footer-nav a:hover { text-decoration: underline; }
+        .footer-meta { font-size: 0.8125rem; color: #C3CAD6; }
+        .footer-meta a { display: inline-block; padding: 4px 0; text-decoration: none; }
+        .footer-meta a:hover { text-decoration: underline; }
+        @media (min-width: 1024px) {
+            .footer-grid { grid-template-columns: 1.4fr auto 1fr; gap: 48px; }
+            .footer-meta { text-align: right; }
+        }
+
+        /* ---------- Motion ---------- */
+        .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+        .js .reveal.is-visible { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .js .reveal { opacity: 1; transform: none; transition: none; }
+            .btn { transition: none; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is a simple HTML web page.</p>
+    <!-- SVG icon sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+            <symbol id="i-hvac" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.8"/><path d="M12 10.2C12 6 13 3 16 3c2 0 3 2 2 4-1 2-3 3-6 3.200zM13.800 12c4.200 0 7.200 1 7.200 4 0 2-2 3-4 2-2-1-3-3-3.200-6zM12 13.800c0 4.200-1 7.200-4 7.200-2 0-3-2-2-4 1-2 3-3 6-3.200zM10.200 12C6 12 3 11 3 8c0-2 2-3 4-2 2 1 3 3 3.200 6z"/></symbol>
+            <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="6.500"/><path d="M12 2v3.500M12 18.500V22M2 12h3.500M18.500 12H22M4.900 4.900l2.500 2.500M16.600 16.600l2.500 2.500M4.900 19.100l2.500-2.500M16.600 7.400l2.500-2.500"/></symbol>
+            <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.500l8.500 4.800v9.400L12 21.500l-8.500-4.800V7.300z"/><path d="M12 12l8.500-4.700M12 12L3.500 7.300M12 12v9.500"/></symbol>
+            <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="7" height="7" rx="1"/><rect x="13.500" y="3.500" width="7" height="7" rx="1"/><rect x="3.500" y="13.500" width="7" height="7" rx="1"/><rect x="13.500" y="13.500" width="7" height="7" rx="1"/></symbol>
+            <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.500l9 5 9-5"/></symbol>
+            <symbol id="i-layers3" viewBox="0 0 24 24"><path d="M12 3l9 4.800-9 4.800-9-4.800z"/><path d="M3 12l9 4.800 9-4.800M3 16.200l9 4.800 9-4.800"/></symbol>
+            <symbol id="i-door" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M12 3v18"/><path d="M9.500 12h.01M14.500 12h.01"/></symbol>
+            <symbol id="i-bricks" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9.300h18M3 14.700h18M9 4v5.300M15 9.300v5.400M9 14.700V20"/></symbol>
+            <symbol id="i-roller" viewBox="0 0 24 24"><rect x="4" y="3" width="14" height="6" rx="1"/><path d="M18 6h2v5.500h-9V15"/><rect x="9.500" y="15" width="3" height="6" rx="1"/></symbol>
+            <symbol id="i-wood" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1"/><rect x="8.500" y="5.500" width="7" height="5" rx=".5"/><rect x="8.500" y="13" width="7" height="5" rx=".5"/></symbol>
+            <symbol id="i-clean" viewBox="0 0 24 24"><path d="M12 3v6"/><path d="M7 9h10l2.500 12h-15z"/><path d="M9 14v4M12 14v4M15 14v4"/></symbol>
+            <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c0-3.600 2.900-6 6.500-6s6.500 2.400 6.500 6"/><path d="M16 4.700a3.500 3.500 0 010 6.600M18 14.500c2 .8 3.500 2.700 3.500 5.500"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.500l8 3v6c0 5-3.400 8.800-8 10-4.600-1.200-8-5-8-10v-6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></symbol>
+            <symbol id="i-usercheck" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c0-3.600 2.900-6 6.500-6s6.500 2.400 6.500 6"/><path d="M16 11.500l2 2 4-4.500"/></symbol>
+            <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="11" height="18" rx="1"/><path d="M15 9h5v12h-5M8 7h3M8 11h3M8 15h3M3 21h18"/></symbol>
+            <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.500"/><path d="M12 12l8-8"/></symbol>
+            <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.200 3.600-7 8-7s8 2.800 8 7"/></symbol>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.500 1.500a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.500 7l8.500 6 8.500-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.500s7-6.200 7-12a7 7 0 10-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="9.500" r="2.500"/></symbol>
+            <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+        </defs>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- A. HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="CBSG Electromechanical Works LLC, home">
+                <img src="assets/logo-96.webp" srcset="assets/logo-96.webp 1x, assets/logo-192.webp 2x" width="48" height="48" alt="CBSG logo">
+                <span class="brand-name">CBSG Electromechanical Works LLC</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+                <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+                <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+            </button>
+            <nav class="nav" id="site-nav" aria-label="Main">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why">Why CBSG</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary btn-sm" href="#contact">Request a Quotation <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- B. HERO -->
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="hero-media">
+                <!-- Stock photograph (Unsplash licence); illustrative only, not a CBSG project. -->
+                <img src="assets/hero-900.webp" srcset="assets/hero-900.webp 900w, assets/hero-1600.webp 1600w, assets/hero-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="Dubai skyline with the Burj Khalifa at sunrise" fetchpriority="high">
+            </div>
+            <div class="container hero-body">
+                <div class="hero-text">
+                    <p class="eyebrow">Electromechanical &amp; Building Services · Dubai, UAE</p>
+                    <h1 id="hero-title">Complete building solutions. <span>Built around your needs.</span></h1>
+                    <p class="lead">From HVAC and MEP installations to civil works, interior finishing, and building maintenance, CBSG Electromechanical Works LLC delivers practical, quality-focused services tailored to your project requirements.</p>
+                    <p class="lead">With an experienced team and a commitment to professionalism, we help clients maintain, improve, and transform their spaces.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contact">Request a Quotation <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                        <a class="btn btn-outline" href="#services">Explore Our Services</a>
+                    </div>
+                    <p class="hero-note">Established in 2018 · Dubai, United Arab Emirates</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. ABOUT -->
+        <section class="section" id="about" aria-labelledby="about-title">
+            <div class="container about-grid">
+                <div class="about-text reveal">
+                    <p class="eyebrow">About CBSG</p>
+                    <h2 class="section-title" id="about-title">One partner for a wide range of building services.</h2>
+                    <p class="lead">CBSG Electromechanical Works LLC is a technical services company established in Dubai in 2018. We provide electromechanical, civil, renovation and day-to-day maintenance services, shaped around each client's requirements and satisfaction.</p>
+                    <p class="lead">Our experienced team carries out MEP sub-contracting works, maintenance, renovation and related works with professionalism, quality and cost-effective solutions.</p>
+                </div>
+                <div class="about-media reveal">
+                    <img src="assets/about.webp" width="480" height="320" alt="Air handling plant room with insulated pipework and ductwork" loading="lazy">
+                    <p class="about-badge"><span>Quality.</span><span>Professionalism.</span><span>Integrity.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. SERVICES -->
+        <section class="section services" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="services-head reveal">
+                    <p class="eyebrow">Our Services</p>
+                    <h2 class="section-title" id="services-title">Comprehensive services for your building and facility needs.</h2>
+                    <p class="lead">From essential building systems to finishing details, CBSG offers a broad range of services under one roof.</p>
+                </div>
+                <ul class="service-grid">
+                    <li class="service-card reveal">
+                        <img src="assets/services/hvac.webp" width="720" height="480" alt="Rooftop air handling unit" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-hvac"/></svg>
+                            <div><h3>HVAC Systems</h3><p>Installation and maintenance of heating, ventilation, and air conditioning systems, including various types of ducting works.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/mep.webp" width="394" height="263" alt="Plant room piping and pumps" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-gear"/></svg>
+                            <div><h3>MEP Services</h3><p>Mechanical, electrical, plumbing, piping, and structured cabling.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/steel.webp" width="720" height="480" alt="Steel staircase with stainless steel handrails" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-cube"/></svg>
+                            <div><h3>Steel Fabrication</h3><p>Steel fabrication, stainless steel handrails, and other fabrication works.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/ceiling.webp" width="705" height="470" alt="Ceiling tiles" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>
+                            <div><h3>Civil &amp; Ceiling Works</h3><p>Ceiling works using 60 × 60 tiles, gypsum, and perforated aluminium systems.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/pavers.webp" width="526" height="351" alt="Interlocking paver pathway" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>
+                            <div><h3>Pavers, Tiles &amp; Interlock</h3><p>Paver works, floor tiles, interlocking paving blocks, and kerbstones.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/partition.webp" width="462" height="308" alt="Office glass and panel partitions" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-door"/></svg>
+                            <div><h3>Partition Works</h3><p>Gypsum, aluminium, and fabric panel partitions.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/flooring.webp" width="652" height="435" alt="Parquet wooden flooring" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-layers3"/></svg>
+                            <div><h3>Flooring Solutions</h3><p>Ceramic tiles, marble, carpet, parquet, PVC gymnasium flooring, and raised flooring.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/cladding.webp" width="720" height="480" alt="Vertical timber slat wall cladding" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-bricks"/></svg>
+                            <div><h3>Wall Covering &amp; Cladding</h3><p>Wooden cladding, gypsum cladding, and aluminium cladding, including ALU-BOND.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/painting.webp" width="720" height="480" alt="Paint roller applying blue paint to a white wall" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-roller"/></svg>
+                            <div><h3>Painting &amp; Wall Finishing</h3><p>Internal and external wall painting, floor painting, epoxy flooring, wall tiling, and wallpaper fixing.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/joinery.webp" width="499" height="333" alt="Arched wooden windows" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-wood"/></svg>
+                            <div><h3>Woodwork &amp; Joinery</h3><p>Wooden doors, windows, shelving, cabinets, cladding, and furniture.</p></div>
+                        </div>
+                    </li>
+                    <li class="service-card reveal">
+                        <img src="assets/services/cleaning.webp" width="547" height="365" alt="Cleaner mopping an office floor" loading="lazy">
+                        <div class="service-body">
+                            <svg class="icon" aria-hidden="true"><use href="#i-clean"/></svg>
+                            <div><h3>Building &amp; Office Cleaning</h3><p>Building cleaning and office cleaning services.</p></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- E. WHY CBSG -->
+        <section class="section why" id="why" aria-labelledby="why-title">
+            <div class="container">
+                <p class="eyebrow">Why CBSG</p>
+                <h2 class="section-title" id="why-title">Quality, professionalism, and service you can rely on.</h2>
+                <ul class="why-grid">
+                    <li class="why-item reveal">
+                        <div class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
+                        <h3>Experienced Professionals</h3>
+                        <p>An experienced team managing day-to-day operations in their respective fields.</p>
+                    </li>
+                    <li class="why-item reveal">
+                        <div class="badge"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
+                        <h3>Commitment to Quality</h3>
+                        <p>An emphasis on quality standards, professionalism, and integrity.</p>
+                    </li>
+                    <li class="why-item reveal">
+                        <div class="badge"><svg class="icon" aria-hidden="true"><use href="#i-usercheck"/></svg></div>
+                        <h3>Client-Focused Approach</h3>
+                        <p>Services guided by client requirements, satisfaction, and value for money.</p>
+                    </li>
+                    <li class="why-item reveal">
+                        <div class="badge"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></div>
+                        <h3>Broad Service Capabilities</h3>
+                        <p>A wide range of electromechanical, civil, finishing, and maintenance services.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- F. VISION & MISSION -->
+        <section class="vm on-dark" aria-labelledby="vm-title">
+            <img class="vm-bg" src="assets/vision-900.webp" srcset="assets/vision-900.webp 900w, assets/vision-1600.webp 1600w" sizes="100vw" width="1600" height="1049" alt="" loading="lazy">
+            <div class="container">
+                <h2 class="eyebrow" id="vm-title">Our Vision &amp; Mission</h2>
+                <div class="vm-grid">
+                    <div class="vm-item">
+                        <svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>
+                        <div>
+                            <h3>Our Vision</h3>
+                            <p>To become a quality-focused service provider in the UAE across HVAC, MEP, civil works, and building maintenance, continually improving services through smart work and delivering excellent value for money.</p>
+                        </div>
+                    </div>
+                    <div class="vm-item">
+                        <svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>
+                        <div>
+                            <h3>Our Mission</h3>
+                            <p>To help our clients achieve their goals through quality services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. CONTACT -->
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <div class="container contact-grid">
+                <div class="contact-text">
+                    <p class="eyebrow">Contact Us</p>
+                    <h2 class="section-title" id="contact-title">Let's discuss your next project.</h2>
+                    <p class="lead">Looking for an electromechanical services partner, maintenance support, renovation work, or building finishing solutions? Get in touch with CBSG to discuss your requirements and request a quotation.</p>
+                    <a class="btn btn-primary" href="mailto:info@cbsgroup.ae?subject=Quotation%20request&amp;body=Hello%20CBSG%20team%2C%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20quotation.%0D%0A%0D%0AName%3A%0D%0ACompany%3A%0D%0APhone%3A%0D%0AService%20required%3A%0D%0AProject%20location%3A%0D%0AProject%20details%3A%0D%0A">Request a Quotation <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    <p class="contact-fallback">This opens your email app with a ready-to-fill enquiry. If it does not open, write to <a href="mailto:info@cbsgroup.ae">info@cbsgroup.ae</a> or call <a href="tel:+971551906869">+971 55 190 6869</a>.</p>
+                </div>
+                <div class="contact-card">
+                    <ul>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
+                            <div><span class="contact-name">Ganesh Bala</span><span class="contact-role">Operation Manager</span></div>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+                            <a href="tel:+971551906869">+971 55 190 6869</a>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                            <a href="mailto:info@cbsgroup.ae">info@cbsgroup.ae</a>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                            <address style="font-style:normal">P.O. Box 624585, Dubai, United Arab Emirates</address>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+                            <a href="https://www.cbsgroup.ae" rel="noopener">www.cbsgroup.ae</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- H. FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/logo-96.webp" srcset="assets/logo-96.webp 1x, assets/logo-192.webp 2x" width="64" height="64" alt="CBSG logo" loading="lazy">
+                <div>
+                    <strong>CBSG Electromechanical Works LLC</strong>
+                    <span>Electromechanical · Civil · Finishing · Maintenance</span>
+                    <span>Dubai, United Arab Emirates</span>
+                </div>
+            </div>
+            <nav aria-label="Footer">
+                <ul class="footer-nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why">Why CBSG</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-meta">
+                <p><a href="tel:+971551906869">+971 55 190 6869</a> · <a href="mailto:info@cbsgroup.ae">info@cbsgroup.ae</a></p>
+                <p>&copy; 2026 CBSG Electromechanical Works LLC. All rights reserved.</p>
+                <p>Crafted with care by <a href="https://creowis.com" target="_blank" rel="noopener">CreoWis</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var nav = document.getElementById('site-nav');
+
+            function setOpen(open) {
+                nav.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            }
+            toggle.setAttribute('aria-label', 'Open menu');
+            toggle.addEventListener('click', function () {
+                setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+            });
+            nav.addEventListener('click', function (e) {
+                if (e.target.closest('a')) setOpen(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+                    setOpen(false);
+                    toggle.focus();
+                }
+            });
+            window.matchMedia('(min-width: 900px)').addEventListener('change', function () { setOpen(false); });
+
+            // Subtle reveal on scroll; content stays visible if JS, IntersectionObserver or motion is unavailable.
+            var items = document.querySelectorAll('.reveal');
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce || !('IntersectionObserver' in window)) {
+                items.forEach(function (el) { el.classList.add('is-visible'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+                });
+            }, { rootMargin: '0px 0px -8% 0px' });
+            items.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 </body>
 </html>
